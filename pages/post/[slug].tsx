@@ -44,9 +44,9 @@ const BlogDetail = ({ posts }: any) => {
 export async function getStaticPaths() {
 
   
-  const endpoint = process.env.API_APP;
+  // const endpoint = process.env.API_APP;
 
-   const res = await fetch(`${endpoint}api/productAll/`);
+   const res = await fetch(`https://traiga-api.vercel.app/api/productAll/`);
   // const res = await fetch(`http://localhost:3002/api/productAll/`);
   const posts = await res.json();
 
@@ -68,9 +68,9 @@ export async function getStaticProps(context: any) {
   // You can use any data fetching library
   const slug = context.params.slug;
   
-  const endpoint = process.env.API_APP;
+  // const endpoint = process.env.API_APP;
 
-  const res = await fetch(`${endpoint}api/product/${slug}`);
+  const res = await fetch(`https://traiga-api.vercel.app/api/product/${slug}`);
   // const res = await fetch(`http://localhost:3002/api/product/${slug}`);
   
   const posts = await res.json();
