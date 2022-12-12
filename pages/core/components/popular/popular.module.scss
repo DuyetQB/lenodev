@@ -1,0 +1,115 @@
+.popular {
+  display: flex;
+  padding: 30px 10px;
+  @media  screen and (max-width:779px) {
+    flex-direction: column;
+}
+
+  .posts {
+    flex: 1;
+    padding-right: 20px;
+
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #eee;
+      margin-bottom: 20px;
+
+      h2 {
+        color:var(--primary);
+        display: flex;
+        align-items: center;
+
+        svg {
+          fill: var(--primary);
+        }
+      }
+
+      a {
+        color: #096DD9;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .icon_right {
+        margin-left: 10px;
+      }
+    }
+
+    .layout {
+      display: flex;
+      @media  screen and (max-width:779px) {
+        flex-direction: column;
+    }
+
+      .main_post {
+        flex: 1;
+        padding: 0 10px;
+        @media  screen and (max-width:779px) {
+          padding-bottom: 20px;
+      }
+        .post_link {
+          padding-left: 10px;
+          transition: 0.3s ease-in-out;
+          font-size: 1.2em;
+
+          &:hover {
+            color: var(--primary);
+          }
+
+        }
+      }
+
+      .post_timeline {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+
+        .post_timevalue {
+          margin-left: 5px;
+          font-size: 0.8em;
+        }
+      }
+
+      .list_posts {
+        flex: 1;
+        padding-left: 10px;
+        @media  screen and (max-width:779px) {
+          padding-left: 0px;
+      }
+
+        figure {
+          display: flex;
+          padding-bottom: 10px;
+          padding-left: 10px;
+          @media  screen and (max-width:779px) {
+            padding-left: 0px;
+        }
+        }
+        .post_content {
+          padding-left: 10px;
+
+          .post_link {
+            transition: 0.3s ease-in-out;
+
+            h3 {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 3;
+            }
+
+            &:hover {
+              color: var(--primary);
+            }
+          }
+        }
+      }
+    }
+  }
+}

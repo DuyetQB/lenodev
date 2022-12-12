@@ -1,0 +1,26 @@
+
+
+
+
+.blog_detail {
+    display: flex;
+    
+    .blog_content {
+
+        .title {
+            font-size: 3em;
+            padding: 30px 0;
+        }
+        
+        .image_post {
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .content_description {
+            padding: 20px 0;
+            font-size: 1.3em;
+        }
+
+    }
+}

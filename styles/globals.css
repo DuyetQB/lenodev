@@ -1,3 +1,9 @@
+
+:root {
+  --yellow:#ff8917;
+  --primary:rgb(118, 0, 220);
+}
+
 html,
 body {
   padding: 0;
@@ -15,6 +21,9 @@ a {
   box-sizing: border-box;
 }
 
+ul,li,p,h1,h2,h3,h4,h5,h6, a ,figure {
+  margin: 0 !important;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -23,4 +32,19 @@ a {
     color: white;
     background: black;
   }
+}
+
+@font-face {
+  font-family: Neuropo;
+  src: url(../fonts/Neuropolitical-Regular.ttf);
+}
+
+
+.container {
+  max-width: 1390px;
+  margin: 0 auto;
+}
+
+img {
+  position: relative !important;
 }

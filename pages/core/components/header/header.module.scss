@@ -1,0 +1,74 @@
+.header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    font-family: Neuropo;
+    font-size: 26px;
+
+    &::first-letter {
+        color:rgb(118, 0, 220);
+    }
+  }
+
+  .navigation {
+    .list {
+      display: flex;
+      align-items: center;
+      list-style-type: none;
+      @media screen and (max-width: 779px) {
+        display: none;
+      }
+
+      .item {
+        padding: 10px 20px;
+
+        .icon_search {
+            display: flex;
+            cursor: pointer;
+        }
+
+        a {
+          transition: 0.3s ease-in-out;
+          font-size: 1.2em;
+          &:hover {
+            color: var(--primary);
+          }
+        }
+      }
+    }
+
+    .menu_mobile {
+      display: none;
+      cursor: pointer;
+
+      @media screen and (max-width: 779px) {
+        display: block;
+      }
+
+      span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #cdcdcd;
+        border-radius: 3px;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+      }
+
+      .openMiddle {
+        opacity: 0;
+      }
+
+      .openTop {
+        transform: rotate(45deg) translate(40%, 50%);
+      }
+      .openBottom {
+        transform: rotate(-45deg) translate(10px, 0);
+      }
+    }
+  }
+}
