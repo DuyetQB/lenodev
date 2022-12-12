@@ -14,8 +14,8 @@ const Blog = () => {
 
   
   const handleGetData = () => {
-    // const promise = fetch(`https://traiga-api.vercel.app/api/productAll/?page=1/`)
-    const promise = fetch(`http://localhost:3002/api/productAll/?page=1/`)
+     const promise = fetch(`https://traiga-api.vercel.app/api/productAll/?page=1/`)
+    // const promise = fetch(`http://localhost:3002/api/productAll/?page=1/`)
       .then((res) => res.json())
       .then((data): any => {
         setPost({

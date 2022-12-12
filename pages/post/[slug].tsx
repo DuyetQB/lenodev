@@ -41,13 +41,13 @@ const BlogDetail = ({ posts }: any) => {
   );
 };
 
-export async function getStaticPaths(context:any) {
-  console.log("context in pat:",context);
+export async function getStaticPaths() {
+
   
   const endpoint = process.env.API_APP;
-  // const slug = context.params.slug;
-  // const res = await fetch(`${endpoint}api/productAll/`);
-  const res = await fetch(`http://localhost:3002/api/productAll/`);
+
+   const res = await fetch(`${endpoint}api/productAll/`);
+  // const res = await fetch(`http://localhost:3002/api/productAll/`);
   const posts = await res.json();
 
   const path = posts?.data.map((item: any) => {
@@ -70,8 +70,8 @@ export async function getStaticProps(context: any) {
   
   const endpoint = process.env.API_APP;
 
-  // const res = await fetch(`${endpoint}api/product/${slug}`);
-  const res = await fetch(`http://localhost:3002/api/product/${slug}`);
+  const res = await fetch(`${endpoint}api/product/${slug}`);
+  // const res = await fetch(`http://localhost:3002/api/product/${slug}`);
   
   const posts = await res.json();
 
