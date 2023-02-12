@@ -24,7 +24,7 @@ const BlogDetail = ({ posts }: any) => {
         <div className={styles.blog_detail}>
 
       <div className={styles.blog_content}>
-        <h3 className={styles.title}>{posts?.data.title}</h3>
+        <h1 className={styles.title}>{posts?.data.title}</h1>
         <Image
           src={posts?.data.imageUrl}
           alt={posts?.data.title}
@@ -32,7 +32,8 @@ const BlogDetail = ({ posts }: any) => {
           height={400}
           className={styles.image_post}
         />
-        <p className={styles.content_description}>{posts?.data.body}</p>
+        {/* <p className={styles.content_description}>{posts?.data.body}</p> */}
+        <p dangerouslySetInnerHTML={{ __html: posts?.data.body} }></p>
       </div>
 
         </div>

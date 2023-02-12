@@ -13,6 +13,7 @@ const Meta = ({ ...props }: MetaProps) => {
       <meta property="og:image" content={props.ogImage} />
       <meta property="og:description" content={props.ogDescription} />
       <meta property="og:title" content={props.ogTitle} />
+      <meta property="og:image:secure_url" content={props.ogImage} />
       <meta name="keywords" content={props.keywords} />
       <meta
         property="og:site_name"
@@ -24,6 +25,7 @@ const Meta = ({ ...props }: MetaProps) => {
       <meta name="twitter:image" content={props.twitterImage} />
       <meta name="twitter:site" content="Lenodev" />
       <meta name="twitter:creator" content="Lenodev.com" />
+      
     </Head>
   );
 };
