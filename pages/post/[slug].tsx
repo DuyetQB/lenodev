@@ -12,13 +12,13 @@ const BlogDetail = ({ posts }: any) => {
       <Meta
         title={posts?.data.title}
         description={posts?.data.description}
-        ogImage={posts?.data.imageThumbnailUrl}
+        ogImage={posts?.data.imageUrl}
         ogDescription={posts?.data.description}
         ogTitle={posts?.data.title}
         keywords={posts?.data.title}
         twitterTitle={posts?.data.title}
         twitterDescription={posts?.data.description}
-        twitterImage={posts?.data.imageThumbnailUrl}
+        twitterImage={posts?.data.imageUrl}
       />
       <div className="container">
         <div className={styles.blog_detail}>
@@ -73,7 +73,7 @@ const BlogDetail = ({ posts }: any) => {
 export async function getStaticPaths() {
   // const endpoint = process.env.API_APP;
 
-  const res = await fetch(`https://traiga-api.vercel.app/api/productAll/`);
+  const res = await fetch(`https://lenodev-landing-api.vercel.app/api/productAll/`);
   // const res = await fetch(`http://localhost:3002/api/productAll/`);
   const posts = await res.json();
 
@@ -97,7 +97,7 @@ export async function getStaticProps(context: any) {
 
   // const endpoint = process.env.API_APP;
 
-  const res = await fetch(`https://traiga-api.vercel.app/api/product/${slug}`);
+  const res = await fetch(`https://lenodev-landing-api.vercel.app/api/product/${slug}`);
   // const res = await fetch(`http://localhost:3002/api/product/${slug}`);
 
   const posts = await res.json();
