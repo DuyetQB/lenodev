@@ -12,7 +12,7 @@ const BlogDetail = ({ posts }: any) => {
   const arr:any = []
   const keywords = posts?.data.keyWords
   
-  for (let index = 0; index < keywords.length; index++) {
+  for (let index = 0; index < keywords?.length; index++) {
     const element = keywords[index].item;
 
     arr.push(element)
