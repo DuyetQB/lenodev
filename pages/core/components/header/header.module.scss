@@ -4,6 +4,12 @@
   justify-content: space-between;
   align-items: center;
 
+  position: sticky;
+    z-index: 100;
+    top: 0px;
+    backdrop-filter: blur(6px);
+    background-color: rgba(255, 255, 255, 0.8);
+
   .logo {
     font-family: Neuropo;
     font-size: 26px;
@@ -23,7 +29,8 @@
       }
 
       .item {
-        padding: 10px 20px;
+        // padding: 10px 20px;
+        padding: 10px 15px;
 
         .icon_search {
             display: flex;
@@ -34,7 +41,9 @@
           transition: 0.3s ease-in-out;
           font-size: 1.2em;
           &:hover {
-            color: var(--primary);
+            // color: var(--primary);
+            background: var(--primary);
+            color: white;
           }
         }
       }

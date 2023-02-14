@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Popular from "../popular/popular";
 import Button from "../button/button";
 import moment from "moment";
+import Loading from "../loading/loading"
 
 const Blog = () => {
   const [post, setPost] = useState<any>({
@@ -14,7 +15,10 @@ const Blog = () => {
 
   
   const handleGetData = () => {
-     const promise = fetch(`https://lenodev-landing-api.vercel.app/api/productAll/?page=1/`)
+    const url = `http://localhost:3004/api/productAll/?page=1/`
+    const url2 = `https://lenodev-landing-api.vercel.app/api/productAll/?page=1/`
+
+     const promise = fetch(url2)
     // const promise = fetch(`http://localhost:3002/api/productAll/?page=1/`)
       .then((res) => res.json())
       .then((data): any => {
@@ -60,7 +64,7 @@ const Blog = () => {
               </div>
               <div className={styles.list_posts}>
                 {post?.isLoading ? (
-                  <>loading...</>
+                  <Loading />
                 ):(
                   <>
                   {post?.data.map((item: any, index: number) => (

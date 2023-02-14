@@ -7,6 +7,17 @@ import Link from "next/link";
 import moment from "moment";
 
 const BlogDetail = ({ posts }: any) => {
+
+  console.log("posts:",posts?.data.keyWords);
+  const arr:any = []
+  const keywords = posts?.data.keyWords
+  
+  for (let index = 0; index < keywords.length; index++) {
+    const element = keywords[index].item;
+
+    arr.push(element)
+  }
+
   return (
     <Layout>
       <Meta
@@ -15,7 +26,7 @@ const BlogDetail = ({ posts }: any) => {
         ogImage={posts?.data.imageUrl}
         ogDescription={posts?.data.description}
         ogTitle={posts?.data.title}
-        keywords={posts?.data.title}
+        keywords={arr.toString() || posts?.data.title}
         twitterTitle={posts?.data.title}
         twitterDescription={posts?.data.description}
         twitterImage={posts?.data.imageUrl}
@@ -72,8 +83,10 @@ const BlogDetail = ({ posts }: any) => {
 
 export async function getStaticPaths() {
   // const endpoint = process.env.API_APP;
+  const url = "http://localhost:3004/api/productAll/"
+  const url2 = "https://lenodev-landing-api.vercel.app/api/productAll/"
 
-  const res = await fetch(`https://lenodev-landing-api.vercel.app/api/productAll/`);
+  const res = await fetch(url2);
   // const res = await fetch(`http://localhost:3002/api/productAll/`);
   const posts = await res.json();
 
@@ -94,10 +107,11 @@ export async function getStaticProps(context: any) {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
   const slug = context.params.slug;
-
+  const url = `http://localhost:3004/api/product/${slug}`
+  const url2 = `https://lenodev-landing-api.vercel.app/api/product/${slug}`
   // const endpoint = process.env.API_APP;
 
-  const res = await fetch(`https://lenodev-landing-api.vercel.app/api/product/${slug}`);
+  const res = await fetch(url2);
   // const res = await fetch(`http://localhost:3002/api/product/${slug}`);
 
   const posts = await res.json();

@@ -1,10 +1,12 @@
 .blog_detail {
   display: flex;
   justify-content: center;
+  padding: 0 150px;
+
 
   .blog_content {
     .title {
-      font-size: 3em;
+      font-size: 2.6em;
       padding: 30px 0;
     }
 
@@ -16,6 +18,12 @@
     .content_description {
       padding: 20px 0;
       font-size: 1.3em;
+
+      img {
+        max-width: 80%;
+        width: 600px;
+        height: 400px;
+      }
     }
     .user {
       padding: 20px 0px;
@@ -27,15 +35,16 @@
       &__name {
         margin-left: 10px;
         color: #292929;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         font-weight: 600;
       }
       &__time {
         margin-left: 10px !important;
+        font-size: 0.8em;
       }
 
       &__icon {
-        width: 20px;
+        width: 15px;
         color: #1b74e4;
         margin-left: 4px;
       }

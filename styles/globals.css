@@ -41,7 +41,8 @@ ul,li,p,h1,h2,h3,h4,h5,h6, a ,figure {
 
 
 .container {
-  max-width: 1390px;
+  /* max-width: 1031px; */
+  max-width: 1390px; 
   margin: 0 auto;
 }
 
