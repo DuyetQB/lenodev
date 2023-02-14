@@ -7,8 +7,6 @@ import Meta from "../../components/meta/meta";
 import Blog from "../../components/blog";
 
 const Home = (posts:any) => {
-  console.log("props:",posts);
-  
   return (
     <Layout>
       <Meta
