@@ -21,7 +21,7 @@ const News = () => {
         <p>this is News page</p>
 
 
-        
+        hhhhhhnnnnnnnnnnn
         <p>this is News page ggggg</p>
       </div>
     </Layout>
