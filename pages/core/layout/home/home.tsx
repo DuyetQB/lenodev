@@ -19,6 +19,8 @@ const Home = (posts:any) => {
         twitterTitle="Lenodev - Trang chủ"
         twitterDescription="Lenodev - Blog chia sẻ những kiến thức về lập trình "
         twitterImage={Thumbnail.src.toString()}
+        linkCanoncal="https://lenodev.com"
+        robotsFollow="index,follow"
       />
       <Banner />
       <main className={styles.main}>

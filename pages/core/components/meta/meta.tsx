@@ -15,11 +15,13 @@ const Meta = ({ ...props }: MetaProps) => {
       <meta property="og:title" content={props.ogTitle} />
       <meta property="og:image:secure_url" content={props.ogImage} />
       <meta name="keywords" content={props.keywords} />
+      <meta name="robots" content={props.robotsFollow} />
+      <link rel="canonical" href={props.linkCanoncal} />
       <meta
         property="og:site_name"
         content="Lenodev - Cung cấp các bài viết liên quan tới lập trình từ Frontend cho tới Backend"
       />
-      <meta property="og:url" content="https://lenodev.com/" />
+      <meta property="og:url" content={props.linkCanoncal} />
       <meta name="twitter:title" content={props.twitterTitle} />
       <meta name="twitter:description" content={props.twitterDescription} />
       <meta name="twitter:image" content={props.twitterImage} />

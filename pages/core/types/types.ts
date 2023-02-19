@@ -10,6 +10,8 @@ export interface MetaProps {
     twitterTitle:string,
     twitterDescription:string,
     twitterImage:string,
+    linkCanoncal?:string,
+    robotsFollow?:string
 
 }
 
