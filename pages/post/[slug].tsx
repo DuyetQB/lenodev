@@ -179,7 +179,7 @@ export async function getStaticPaths() {
   const url = "http://localhost:3004/api/productAll/";
   const url2 = "https://lenodev-landing-api.vercel.app/api/productAll/";
 
-  const res = await fetch(url);
+  const res = await fetch(url2);
   // const res = await fetch(`http://localhost:3002/api/productAll/`);
   const posts = await res.json();
 
@@ -204,7 +204,7 @@ export async function getStaticProps(context: any) {
   const url2 = `https://lenodev-landing-api.vercel.app/api/product/${slug}`;
   // const endpoint = process.env.API_APP;
 
-  const res = await fetch(url);
+  const res = await fetch(url2);
   // const res = await fetch(`http://localhost:3002/api/product/${slug}`);
 
   const posts = await res.json();
