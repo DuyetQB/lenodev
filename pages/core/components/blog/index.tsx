@@ -16,7 +16,7 @@ const Blog = () => {
   
   const handleGetData = () => {
     const url = `http://localhost:3004/api/productAll/?page=1/`
-    const url2 = `https://lenodev-landing-api.vercel.app/api/productAll/?page=1/`
+    const url2 = `https://lenodevapi-srwa.onrender.com/api/productAll/?page=1/`
 
      const promise = fetch(url2)
     // const promise = fetch(`http://localhost:3002/api/productAll/?page=1/`)

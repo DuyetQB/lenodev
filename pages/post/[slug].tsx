@@ -177,7 +177,7 @@ const BlogDetail = ({ posts }: any) => {
 export async function getStaticPaths() {
   // const endpoint = process.env.API_APP;
   const url = "http://localhost:3004/api/productAll/";
-  const url2 = "https://lenodev-landing-api.vercel.app/api/productAll/";
+  const url2 = "https://lenodevapi-srwa.onrender.com/api/productAll/";
 
   const res = await fetch(url2);
   // const res = await fetch(`http://localhost:3002/api/productAll/`);
@@ -201,7 +201,7 @@ export async function getStaticProps(context: any) {
   // You can use any data fetching library
   const slug = context.params.slug;
   const url = `http://localhost:3004/api/product/${slug}`;
-  const url2 = `https://lenodev-landing-api.vercel.app/api/product/${slug}`;
+  const url2 = `https://lenodevapi-srwa.onrender.com/api/product/${slug}`;
   // const endpoint = process.env.API_APP;
 
   const res = await fetch(url2);
