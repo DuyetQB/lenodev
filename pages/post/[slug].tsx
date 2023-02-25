@@ -11,7 +11,7 @@ const BlogDetail = ({ posts }: any) => {
 
 
   const arr: any = [];
-  const keywords = posts?.data.keyWords;
+  const keywords = posts?.data?.keyWords;
 
   for (let index = 0; index < keywords?.length; index++) {
     const element = keywords[index].item;
@@ -208,6 +208,12 @@ export async function getStaticProps(context: any) {
   // const res = await fetch(`http://localhost:3002/api/product/${slug}`);
 
   const posts = await res.json();
+
+  if(!posts.data){
+    return {
+      notFound: true
+  }
+  }
 
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time

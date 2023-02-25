@@ -1,0 +1,37 @@
+.container {
+    width: 80vw;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1, p {
+      padding: 10px 0px;
+    }
+
+    svg {
+      margin-top: 40px;
+    }
+
+  }
+  .searchBox {
+    width: 80%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+  }
+  .links {
+    margin-top: 30px !important;
+  }
+  .link {
+    margin: 10px !important;
+    color: blue;
+    text-decoration: underline;
+  }
+  .link:hover {
+    color: red;
+  }
+
+
+ 
