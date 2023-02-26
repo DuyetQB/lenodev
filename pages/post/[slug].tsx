@@ -199,7 +199,9 @@ export async function getStaticPaths() {
 export async function getStaticProps(context: any) {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
-  const slug = context.params.slug;
+  // const slug = context.params.slug;
+  const {params: { slug }} = context
+
   const url = `http://localhost:3004/api/product/${slug}`;
   const url2 = `https://lenodevapi-srwa.onrender.com/api/product/${slug}`;
   // const endpoint = process.env.API_APP;
