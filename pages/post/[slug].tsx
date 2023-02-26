@@ -222,6 +222,7 @@ export async function getStaticProps(context: any) {
   return {
     props: {
       posts,
+      revalidate: 1
     },
   };
 }
