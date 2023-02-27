@@ -210,7 +210,6 @@ export async function getStaticProps(context: any) {
   const res = await axios.post(url2);
   // const res = await fetch(`http://localhost:3002/api/product/${slug}`);
   
-  // const posts = await res.json();
 
   if(!res.data.data){
     return {
