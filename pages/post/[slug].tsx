@@ -185,7 +185,6 @@ const BlogDetail = ({ posts }: any) => {
                 <span>0</span>
               </div>
             </div>
-            <p>view: {posts?.data.user_viewcount}</p>
             <div className={styles.tags}>
               {posts?.data.keyWords.map((rc: any) => (
                 <Link href={`/post/${rc.item}`} key={rc.id}>{rc.item}</Link>
