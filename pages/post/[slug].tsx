@@ -5,7 +5,7 @@ import styles from "./post.module.scss";
 import ImageUser from "../core/images/avatar_default.jpg";
 import Link from "next/link";
 import moment from "moment";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios"
 
 const BlogDetail = ({ posts }: any) => {
@@ -38,6 +38,28 @@ const BlogDetail = ({ posts }: any) => {
     });
   };
 
+  
+  const onUpdateUserViewCount = async() =>{
+    const localUrl = `http://localhost:3004/api/updateProduct/`
+    const url = `https://lenodevapi-srwa.onrender.com/api/updateProduct/`
+
+    const object = {
+      ...posts?.data,
+      user_viewcount:posts?.data.user_viewcount +1
+    }
+    try {
+       await axios.put(url,object);
+
+      
+    } catch (error) {
+      console.log("err:",error)
+    }
+
+  }
+  useEffect(()=>{
+    onUpdateUserViewCount()
+
+  },[])
 
   return (
     <Layout>
@@ -163,6 +185,7 @@ const BlogDetail = ({ posts }: any) => {
                 <span>0</span>
               </div>
             </div>
+            <p>view: {posts?.data.user_viewcount}</p>
             <div className={styles.tags}>
               {posts?.data.keyWords.map((rc: any) => (
                 <Link href={`/post/${rc.item}`} key={rc.id}>{rc.item}</Link>
