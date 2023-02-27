@@ -6,6 +6,7 @@ import ImageUser from "../core/images/avatar_default.jpg";
 import Link from "next/link";
 import moment from "moment";
 import { useState } from "react";
+import axios from "axios"
 
 const BlogDetail = ({ posts }: any) => {
 
@@ -202,16 +203,16 @@ export async function getStaticProps(context: any) {
   // const slug = context.params.slug;
   const {params: { slug }} = context
 
-  const url = `http://localhost:3004/api/product/${slug}`;
+  const url = `http://localhost:3002/api/product/${slug}`;
   const url2 = `https://lenodevapi-srwa.onrender.com/api/product/${slug}`;
   // const endpoint = process.env.API_APP;
 
-  const res = await fetch(url2);
+  const res = await axios.post(url2);
   // const res = await fetch(`http://localhost:3002/api/product/${slug}`);
+  
+  // const posts = await res.json();
 
-  const posts = await res.json();
-
-  if(!posts.data){
+  if(!res.data.data){
     return {
       notFound: true
   }
@@ -221,7 +222,7 @@ export async function getStaticProps(context: any) {
   // will receive `posts` as a prop at build time
   return {
     props: {
-      posts,
+      posts:res.data,
       revalidate: 1
     },
   };
