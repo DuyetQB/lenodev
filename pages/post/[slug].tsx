@@ -40,15 +40,15 @@ const BlogDetail = ({ posts }: any) => {
 
   
   const onUpdateUserViewCount = async() =>{
-    const localUrl = `http://localhost:3004/api/updateProduct/`
-    const url = `https://lenodevapi-srwa.onrender.com/api/updateProduct/`
+    const localUrl = `http://localhost:3004/api/collect-u-v/`
+    const url = `https://lenodevapi-srwa.onrender.com/api/collect-u-v/`
 
-    const object = {
-      ...posts?.data,
-      user_viewcount:posts?.data.user_viewcount +1
-    }
     try {
-       await axios.put(url,object);
+      await axios.patch(url,{
+        _id:posts?.data._id,
+         user_viewcount:posts?.data.user_viewcount +1
+       }  
+       );
 
       
     } catch (error) {
