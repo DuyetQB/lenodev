@@ -27,7 +27,15 @@ const Meta = ({ ...props }: MetaProps) => {
       <meta name="twitter:image" content={props.twitterImage} />
       <meta name="twitter:site" content="Lenodev" />
       <meta name="twitter:creator" content="Lenodev.com" />
-      
+      {/* metatag for bot. tell bot the time to revisit page */}
+      <meta name="revisit-after" content="1 days" />
+      <meta http-equiv="content-language" content="vi" />
+      <meta http-equiv="cache-control" content="no-cache" />
+      <meta http-equiv="pragma" content="no-cache" />
+      <meta http-equiv="expires" content="0" />
+      {/* meta tag for everyone */}
+      <meta name="distribution" content="Global" />
+
     </Head>
   );
 };
