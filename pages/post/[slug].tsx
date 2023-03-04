@@ -5,7 +5,7 @@ import styles from "./post.module.scss";
 import ImageUser from "../core/images/avatar_default.jpg";
 import Link from "next/link";
 import moment from "moment";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios"
 
 const BlogDetail = ({ posts }: any) => {
@@ -39,27 +39,27 @@ const BlogDetail = ({ posts }: any) => {
   };
 
   
-  const onUpdateUserViewCount = async() =>{
-    const localUrl = `http://localhost:3004/api/collect-u-v/`
-    const url = `https://lenodevapi-srwa.onrender.com/api/collect-u-v/`
+  // const onUpdateUserViewCount = async() =>{
+  //   const localUrl = `http://localhost:3004/api/collect-u-v/`
+  //   const url = `https://lenodevapi-srwa.onrender.com/api/collect-u-v/`
 
-    try {
-      await axios.patch(url,{
-        _id:posts?.data._id,
-         user_viewcount:posts?.data.user_viewcount +1
-       }  
-       );
+  //   try {
+  //     await axios.patch(url,{
+  //       _id:posts?.data._id,
+  //        user_viewcount:posts?.data.user_viewcount +1
+  //      }  
+  //      );
 
       
-    } catch (error) {
-      console.log("err:",error)
-    }
+  //   } catch (error) {
+  //     console.log("err:",error)
+  //   }
 
-  }
-  useEffect(()=>{
-    onUpdateUserViewCount()
+  // }
+  // useEffect(()=>{
+  //   onUpdateUserViewCount()
 
-  },[])
+  // },[])
 
   return (
     <Layout>
