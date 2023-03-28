@@ -253,7 +253,7 @@ export async function getServerSideProps(context:any) {
   const {params: { slug }} = context
 
   const url = `http://localhost:3004/api/product/${slug}`;
-  const url2 = `https://lenodevapi-srwa.onrender.com/api/product/${slug}`;
+  const url2 = `https://lenodevapi-vpvf.onrender.com/api/product/${slug}`;
   // const endpoint = process.env.API_APP;
 
   const res = await axios.get(url2);
