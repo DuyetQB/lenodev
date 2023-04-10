@@ -29,6 +29,15 @@
         // width: 600px;
         // height: 400px;
         object-fit: cover;
+        
+        pre {
+          background: #eeeef0;
+          color: #000;
+          display: inline-flex;
+          margin: 10px 0;
+          padding: 6px;
+          border-radius: 5px;
+        }
 
         @media screen and (max-width: 779px) {
           width: 350px;
