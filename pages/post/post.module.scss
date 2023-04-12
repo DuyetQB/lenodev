@@ -29,15 +29,6 @@
         // width: 600px;
         // height: 400px;
         object-fit: cover;
-        
-        pre {
-          background: #eeeef0;
-          color: #000;
-          display: inline-flex;
-          margin: 10px 0;
-          padding: 6px;
-          border-radius: 5px;
-        }
 
         @media screen and (max-width: 779px) {
           width: 350px;
@@ -46,6 +37,29 @@
           object-fit: contain;
           margin: 10px 0px;
         }
+      }
+      pre {
+        background: #eeeef0;
+        color: #000;
+        display: flex;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+        position: relative;
+        // &:hover {
+        //   transition: all 0.4s linear;
+        //   &::before {
+        //     position: absolute;
+        //     content: "Copy";
+        //     color: #fff;
+        //     background: black;
+        //     right: 20px;
+        //     top: 50%;
+        //     transform: translateY(-50%);
+        //     padding: 5px;
+        //     cursor: pointer;
+        //   }
+        // }
       }
     }
 
