@@ -6,6 +6,7 @@ import Popular from "../popular/popular";
 import Button from "../button/button";
 import moment from "moment";
 import Loading from "../loading/loading"
+import axios from "axios"
 
 const Blog = () => {
   const [post, setPost] = useState<any>({
@@ -14,21 +15,26 @@ const Blog = () => {
   });
 
   
-  const handleGetData = () => {
+  const handleGetData = async () => {
     const url = `http://localhost:3004/api/productAll/?page=1/`
     const url2 = `https://lenodevapi-vpvf.onrender.com/api/productAll/?page=1/`
+    // const url3 = `https://lenodevapiadmin.onrender.com/api/productAll/?page=1/`
+    const response = await axios.get(url2);
 
-     const promise = fetch(url2)
-    // const promise = fetch(`http://localhost:3002/api/productAll/?page=1/`)
-      .then((res) => res.json())
-      .then((data): any => {
-        setPost({
-          data:data?.data,
-          isLoading:false
-        });
-      });
+    setPost({
+      data:response?.data.data,
+      isLoading:false
+    });
+    //  const promise = fetch(url3)
+    //   .then((res) => res.json())
+    //   .then((data): any => {
+    //     setPost({
+    //       data:data?.data,
+    //       isLoading:false
+    //     });
+    //   });
 
-      return promise;
+    //   return promise;
   };
 
   useEffect(() => {
@@ -62,12 +68,13 @@ const Blog = () => {
                   Bài viết mới
                 </h2>
               </div>
+             
               <div className={styles.list_posts}>
                 {post?.isLoading ? (
                   <Loading />
                 ):(
                   <>
-                  {post?.data.map((item: any, index: number) => (
+                  {post?.data.data.map((item: any, index: number) => (
                     <figure key={item?._id}>
                       <Link href={`/post/${item?.slug}`}>
                         <Image

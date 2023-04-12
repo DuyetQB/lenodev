@@ -10,7 +10,6 @@ import axios from "axios"
 
 const BlogDetail = ({ posts }: any) => {
 
-
   const arr: any = [];
   const keywords = posts?.data?.keyWords;
 
@@ -37,29 +36,6 @@ const BlogDetail = ({ posts }: any) => {
       count: !reactTionLike.isActiveHeart ? reactTionLike.count + 1 : 0,
     });
   };
-
-  
-  // const onUpdateUserViewCount = async() =>{
-  //   const localUrl = `http://localhost:3004/api/collect-u-v/`
-  //   const url = `https://lenodevapi-srwa.onrender.com/api/collect-u-v/`
-
-  //   try {
-  //     await axios.patch(url,{
-  //       _id:posts?.data._id,
-  //        user_viewcount:posts?.data.user_viewcount +1
-  //      }  
-  //      );
-
-      
-  //   } catch (error) {
-  //     console.log("err:",error)
-  //   }
-
-  // }
-  // useEffect(()=>{
-  //   onUpdateUserViewCount()
-
-  // },[])
 
   return (
     <Layout>
@@ -185,11 +161,11 @@ const BlogDetail = ({ posts }: any) => {
                 <span>0</span>
               </div>
             </div>
-            <div className={styles.tags}>
-              {posts?.data.keyWords.map((rc: any) => (
-                <Link href={`/post/${rc.item}`} key={rc.id}>{rc.item}</Link>
-              ))}
-            </div>
+            {/* <div className={styles.tags}>
+              {posts?.data.keyWords?.map((rc: any) => (
+                <Link href={`/post/${rc?.item}`} key={rc?.id}>{rc?.item}</Link>
+              ))} 
+            </div> */}
           </div>
         </div>
       </div>
