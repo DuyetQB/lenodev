@@ -59,7 +59,7 @@ const Blog = () => {
                 {post?.isLoading ? (
                   <>
                     {[1, 2, 3].map((item) => (
-                      <figure>
+                      <figure key={item}>
                         <Skeleton count={1} height={130} width={240} />
 
                         <Skeleton count={1} height={30} width={240} />
