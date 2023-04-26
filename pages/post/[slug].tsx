@@ -218,9 +218,9 @@ export async function getStaticProps(context: any) {
 //   // will receive `posts` as a prop at build time
   return {
     props: {
-      posts:res.data,
-      revalidate: 10
+      posts:res.data
     },
+    revalidate: 10
   };
 }
 
