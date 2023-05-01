@@ -3,12 +3,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   position: sticky;
   z-index: 100;
   top: 0px;
   backdrop-filter: blur(6px);
-  background-color: rgba(255, 255, 255, 0.8);
+//  background-color: rgba(255, 255, 255, 0.8);
   @media screen and (max-width: 779px) {
     padding: 20px 10px;
   }
@@ -32,24 +31,28 @@
       }
 
       .item {
-        // padding: 10px 20px;
-        padding: 10px 15px;
-
         .icon_search {
+          margin: 10px 15px;
           display: flex;
           cursor: pointer;
         }
 
         a {
           transition: 0.3s ease-in-out;
-          font-size: 1.2em;
+          font-size: 1em;
+          // padding: 6px 15px;
+          border-radius: 9999px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           &:hover {
-            // color: var(--primary);
-            background: var(--primary);
-            color: white;
+            color: var(--primary);
+            background-color: rgb(241 245 249/1);
           }
         }
       }
+
+  
     }
 
     .menu_mobile {

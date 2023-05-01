@@ -1,12 +1,11 @@
 import styles from "./footer.module.scss";
 import Link from "next/link";
-import Image from "next/image";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.bottom}>
-          <p className={styles.copyright}>Bản quyền © 2022 Lenodev.com</p>
+          <p className={styles.copyright}>Copyright © 2022 Lenodev.com</p>
 
           <div className={styles.social_link}>
             <Link href="https://www.facebook.com/profile.php?id=100087750369196" target="_blank">

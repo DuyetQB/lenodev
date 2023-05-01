@@ -1,24 +1,24 @@
-
-
 .footer {
+  z-index: 10;
+  position: relative;
+  background-color: transparent;
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
 
-    .bottom {
+    .social_link {
+      display: flex;
+
+      a {
         display: flex;
-        justify-content: space-between;
-        padding:20px 0;
+        align-items: center;
+        padding: 0 10px;
 
-        .social_link {
-            display: flex;
-
-            a {
-                display: flex;
-                align-items: center;
-                padding: 0 10px;
-
-                .social_icon {
-                    margin: 0 5px;
-                }
-            }
+        .social_icon {
+          margin: 0 5px;
         }
+      }
     }
+  }
 }

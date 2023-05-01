@@ -1,10 +1,8 @@
-import styles from "./home.module.css";
 import Banner from "../../components/banner/banner";
 import Layout from "../layout";
 import Footer from "../../components/footer/footer";
 import Thumbnail from "../../images/image-thumbnail.webp";
 import Meta from "../../components/meta/meta";
-import Blog from "../../components/blog";
 
 const Home = (posts:any) => {
   return (
@@ -23,9 +21,9 @@ const Home = (posts:any) => {
         robotsFollow="index,follow"
       />
       <Banner />
-      <main className={styles.main}>
+      {/* <main className={styles.main}>
         <Blog />
-      </main>
+      </main> */}
       <Footer />
     </Layout>
   );

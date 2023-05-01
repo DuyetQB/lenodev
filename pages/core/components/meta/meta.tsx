@@ -5,7 +5,7 @@ const Meta = ({ ...props }: MetaProps) => {
   return (
     <Head>
       <title>{props.title}</title>
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/icon.svg" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#000000" />
       <meta name="author" content="Lenodev" />
