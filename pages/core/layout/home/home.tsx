@@ -1,7 +1,7 @@
 import Banner from "../../components/banner/banner";
 import Layout from "../layout";
 import Footer from "../../components/footer/footer";
-import Thumbnail from "../../images/image-thumbnail.webp";
+import Thumbnail from "../../images/categorybanner.png";
 import Meta from "../../components/meta/meta";
 
 const Home = (posts:any) => {

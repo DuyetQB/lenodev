@@ -2,7 +2,6 @@ import Link from "next/link";
 import styles from "./blog.module.scss";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import Popular from "../core/components/popular/popular";
 import Button from "../core/components/button/button";
 import moment from "moment";
 import axios from "axios";
