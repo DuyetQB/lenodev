@@ -1,8 +1,7 @@
 import Header from "../components/header/header";
-import styles from "./home/home.module.css";
 const Layout = ({ children }: any) => {
   return (
-    <div className={styles.container}>
+    <div className="px-8 layout">
       <Header />
       {children}
     </div>

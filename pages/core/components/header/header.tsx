@@ -1,23 +1,23 @@
 import styles from "./header.module.scss";
 import Link from "next/link";
-import { useState,useEffect } from "react";
+import { useState } from "react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenLight, setIsOpenLight] = useState(false);
   const [bgHeader, setBgHeader] = useState(false);
 
   const handleToggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-// useEffect(()=>{
-
-//   if(bgHeader == "true"){
-
-//   }
-// },[])
   return (
-    <header className={styles.header} style={{background:bgHeader ? "rgba(255, 255, 255, 0.8)":""}}>
+    <header className={styles.header} >
+    <style jsx>{`
+        header {
+          background: ${bgHeader ? "rgba(255, 255, 255, 0.8)":"transparent"};
+        }
+      `}</style>
       <Link href="/" className="flex items-center">
         {/* Lenodev */}
         <svg
@@ -435,10 +435,14 @@ const Header = () => {
           <button
             aria-label="switch theme"
             className="switcher group relative hidden h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex"
+          onClick={()=>{
+            localStorage.setItem('isLight', JSON.stringify(!isOpenLight));
+            setIsOpenLight(!isOpenLight)
+          }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="transistion relative m-auto hidden h-5 w-5 fill-gray-500 duration-300 group-hover:rotate-180 group-hover:fill-yellow-400 dark:block dark:fill-gray-300"
+              className={`transistion relative m-auto ${!isOpenLight ?'hidden' :'block'} h-5 w-5 fill-gray-500 duration-300 group-hover:rotate-180 group-hover:fill-yellow-400 dark:block dark:fill-gray-300`}
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -450,7 +454,7 @@ const Header = () => {
             </svg>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="transistion relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden"
+              className={`transistion relative ${isOpenLight ?'hidden' :'block'} m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden`}
               viewBox="0 0 20 20"
               fill="currentColor"
             >

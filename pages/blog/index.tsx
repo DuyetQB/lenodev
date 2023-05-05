@@ -17,7 +17,8 @@ const Blog = () => {
 
   const handleGetData = async () => {
     const url = `http://localhost:3004/api/productAll/?page=1/`;
-    const url2 = `https://lenodevapi-vpvf.onrender.com/api/productAll/?page=1/`;
+    // const url2 = `https://lenodevapi-vpvf.onrender.com/api/productAll/?page=1/`;
+    const url2 = `https://lenodevapiadmin.onrender.com/api/public-getAllProduct?page=1/`;
     const response = await axios.get(url2);
     setPost({
       data: response?.data.data,
@@ -49,7 +50,7 @@ const Blog = () => {
                   </>
                 ) : (
                   <>
-                    {post?.data?.data?.map((item: any, index: number) => (
+                    {post?.data?.map((item: any, index: number) => (
                       <>
                       <figure key={item?._id}>
                         <Link href={`/post/${item?.slug}`} className="absolute inset-0 z-[-2]">
