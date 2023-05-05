@@ -8,6 +8,7 @@ import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import Layout from "../core/layout/layout";
+import Meta from "../core/components/meta/meta";
 
 const Blog = () => {
   const [post, setPost] = useState<any>({
@@ -18,7 +19,8 @@ const Blog = () => {
   const handleGetData = async () => {
     const url = `http://localhost:3004/api/productAll/?page=1/`;
     // const url2 = `https://lenodevapi-vpvf.onrender.com/api/productAll/?page=1/`;
-    const url2 = `https://lenodevapiadmin.onrender.com/api/public-getAllProduct?page=1/`;
+    // const url2 = `https://lenodevapiadmin.onrender.com/api/public-getAllProduct?page=1/`;
+    const url2 = `https://lenodevapi.vercel.app/api/public-getAllProduct?page=1/`;
     const response = await axios.get(url2);
     setPost({
       data: response?.data.data,
@@ -34,6 +36,17 @@ const Blog = () => {
 
   return (
     <Layout>
+      <Meta
+        title="Blog - page"
+        description="Blog"
+        ogImage="https://www.google.com/url?sa=i&url=https%3A%2F%2Fdaihocdaivietsaigon.edu.vn%2Ftong-hop-50-anh-nen-dep-4k-danh-cho-may-tinh%2F&psig=AOvVaw1gyas5sErCtIqa1UuPqDww&ust=1683363262121000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCMiOpPzm3f4CFQAAAAAdAAAAABAE"
+        ogDescription="Lenodev - Blog"
+        ogTitle="Blog - page"
+        keywords="Những bài viết trên trang Lenodev"
+        twitterTitle="Lenodev - Blog"
+        twitterDescription="Blog "
+        twitterImage="https://www.google.com/url?sa=i&url=https%3A%2F%2Fdaihocdaivietsaigon.edu.vn%2Ftong-hop-50-anh-nen-dep-4k-danh-cho-may-tinh%2F&psig=AOvVaw1gyas5sErCtIqa1UuPqDww&ust=1683363262121000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCMiOpPzm3f4CFQAAAAAdAAAAABAE"
+      />
       <div className="container">
         <section className={styles.new_post}>
           <article className={styles.posts}>
@@ -41,8 +54,8 @@ const Blog = () => {
               <div className={styles.list_posts}>
                 {post?.isLoading ? (
                   <>
-                    {[1, 2, 3].map((item) => (
-                      <figure key={item} className="block">
+                    {[1, 2, 3].map((item,index) => (
+                      <figure key={index} className="block">
                         <Skeleton count={1} height={130} width={240} />
                         <Skeleton count={1} height={130} width={140} />
                       </figure>
@@ -51,7 +64,6 @@ const Blog = () => {
                 ) : (
                   <>
                     {post?.data?.map((item: any, index: number) => (
-                      <>
                       <figure key={item?._id}>
                         <Link href={`/post/${item?.slug}`} className="absolute inset-0 z-[-2]">
                           <Image
@@ -59,6 +71,7 @@ const Blog = () => {
                             alt={item?.description}
                             width={350}
                             height={250}
+                            loading="lazy"
                           />
                         </Link>
                         <div>
@@ -93,7 +106,6 @@ const Blog = () => {
                         </div>
                       <div className={styles.blackbox}></div>
                       </figure>
-                      </>
                     ))}
                   </>
                 )}

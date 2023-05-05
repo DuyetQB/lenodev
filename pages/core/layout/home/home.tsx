@@ -1,8 +1,17 @@
-import Banner from "../../components/banner/banner";
+// import Banner from "../../components/banner/banner";
 import Layout from "../layout";
-import Footer from "../../components/footer/footer";
+// import Footer from "../../components/footer/footer";
 import Thumbnail from "../../images/categorybanner.png";
 import Meta from "../../components/meta/meta";
+
+import dynamic from 'next/dynamic';
+
+const DynamicBanner = dynamic(() => import('../../components/banner/banner'), {
+loading: () => <p>Loading...</p>,
+});
+const DynamicFooter= dynamic(() => import('../../components/footer/footer'), {
+loading: () => <p>Loading...</p>,
+});
 
 const Home = (posts:any) => {
   return (
@@ -20,11 +29,11 @@ const Home = (posts:any) => {
         linkCanoncal="https://lenodev.com"
         robotsFollow="index,follow"
       />
-      <Banner />
+      <DynamicBanner />
       {/* <main className={styles.main}>
         <Blog />
       </main> */}
-      <Footer />
+      <DynamicFooter />
     </Layout>
   );
 };

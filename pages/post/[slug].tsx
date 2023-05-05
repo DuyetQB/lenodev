@@ -180,8 +180,6 @@ export async function getStaticPaths() {
   const url2 = "https://lenodevapiadmin.onrender.com/api/public-getAllProduct";
 
   const res = await axios.get(url2);
-  // const res = await fetch(`http://localhost:3002/api/productAll/`);
-  // const posts = await res.json();
 
   const path = res?.data?.data.map((item: any) => {
     return {
@@ -203,11 +201,10 @@ export async function getStaticProps(context: any) {
 
   const url = `http://localhost:3004/api/product/${slug}`;
   // const url2 = `https://lenodevapi-vpvf.onrender.com/api/product/${slug}`;
-  const url2 = `https://lenodevapiadmin.onrender.com/api/product/${slug}`;
-  // const endpoint = process.env.API_APP;
+  // const url2 = `https://lenodevapiadmin.onrender.com/api/product/${slug}`;
+  const url2 = `https://lenodevapi.vercel.app/api/product/${slug}`;
 
   const res = await axios.get(url2);
-  // const res = await fetch(`http://localhost:3002/api/product/${slug}`);
   
 
   if(!res.data.data){
