@@ -6,7 +6,7 @@ export interface FetchResult<T> {
   data?: T;
 }
 
-export function useFetch<TResult>(fetchFn: () => Promise<TResult>, deps: unknown[] = []): FetchResult<TResult> {
+export default function useFetch<TResult>(fetchFn: () => Promise<TResult>, deps: unknown[] = []): FetchResult<TResult> {
   const [result, setResult] = useState<FetchResult<TResult>>({
     loading: true,
   });
