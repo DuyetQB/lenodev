@@ -5,10 +5,10 @@ import styles from "./post.module.scss";
 import ImageUser from "../core/images/avatar_default.jpg";
 import Link from "next/link";
 import moment from "moment";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios"
 
-const BlogDetail = ({ posts }: any) => {
+const BlogDetail =  ({ posts }: any) => {
 
   const arr: any = [];
   const keywords = posts?.data?.keyWords;
@@ -37,6 +37,10 @@ const BlogDetail = ({ posts }: any) => {
     });
   };
 
+  useEffect(()=>{
+    // console.log("post:",post);
+    
+  })
   return (
     <Layout>
       <Meta
@@ -177,7 +181,7 @@ export async function getStaticPaths() {
   // const endpoint = process.env.API_APP;
   const url = "http://localhost:3004/api/productAll/";
   // const url2 = "https://lenodevapi-vpvf.onrender.com/api/productAll/";
-  const url2 = "https://lenodevapiadmin.onrender.com/api/public-getAllProduct";
+  const url2 = "https://traiga-api.vercel.app/api/public-getAllProduct";
 
   const res = await axios.get(url2);
 
@@ -202,7 +206,7 @@ export async function getStaticProps(context: any) {
   const url = `http://localhost:3004/api/product/${slug}`;
   // const url2 = `https://lenodevapi-vpvf.onrender.com/api/product/${slug}`;
   // const url2 = `https://lenodevapiadmin.onrender.com/api/product/${slug}`;
-  const url2 = `https://lenodevapi.vercel.app/api/product/${slug}`;
+  const url2 = `https://traiga-api.vercel.app/api/product/${slug}`;
 
   const res = await axios.get(url2);
   

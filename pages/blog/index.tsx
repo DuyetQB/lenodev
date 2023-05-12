@@ -1,36 +1,18 @@
 import Link from "next/link";
 import styles from "./blog.module.scss";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 import Button from "../core/components/button/button";
 import moment from "moment";
-import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import Layout from "../core/layout/layout";
 import Meta from "../core/components/meta/meta";
+import { GetAllPost } from "../core/apiservice/api";
+import { useFetch } from "../core/hooks/useFetch";
 
 const Blog = () => {
-  const [post, setPost] = useState<any>({
-    data: [],
-    isLoading: true,
-  });
 
-  const handleGetData = async () => {
-    const url = `http://localhost:3004/api/productAll/?page=1/`;
-    // const url2 = `https://lenodevapi-vpvf.onrender.com/api/productAll/?page=1/`;
-    // const url2 = `https://lenodevapiadmin.onrender.com/api/public-getAllProduct?page=1/`;
-    const url2 = `https://lenodevapi.vercel.app/api/public-getAllProduct?page=1/`;
-    const response = await axios.get(url2);
-    setPost({
-      data: response?.data.data,
-      isLoading: false,
-    });
-  };
-
-  useEffect(() => {
-    handleGetData();
-  }, []);
+  const {data,loading} = useFetch(async()=>await GetAllPost(),[])
 
   const handleLoadMore = () => {};
 
@@ -52,7 +34,7 @@ const Blog = () => {
           <article className={styles.posts}>
             <div className={styles.layout}>
               <div className={styles.list_posts}>
-                {post?.isLoading ? (
+                {loading ? (
                   <>
                     {[1, 2, 3].map((item,index) => (
                       <figure key={index} className="block">
@@ -63,7 +45,7 @@ const Blog = () => {
                   </>
                 ) : (
                   <>
-                    {post?.data?.map((item: any, index: number) => (
+                    {data?.map((item: any, index: number) => (
                       <figure key={item?._id}>
                         <Link href={`/post/${item?.slug}`} className="absolute inset-0 z-[-2]">
                           <Image
