@@ -5,7 +5,7 @@ import styles from "./post.module.scss";
 import ImageUser from "../core/images/avatar_default.jpg";
 import Link from "next/link";
 import moment from "moment";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios"
 
 const BlogDetail =  ({ posts }: any) => {
@@ -37,10 +37,6 @@ const BlogDetail =  ({ posts }: any) => {
     });
   };
 
-  useEffect(()=>{
-    // console.log("post:",post);
-    
-  })
   return (
     <Layout>
       <Meta
@@ -70,7 +66,7 @@ const BlogDetail =  ({ posts }: any) => {
               />
 
               <div>
-                <Link href="/">
+                <Link href="/" className="flex">
                   <span className={styles.user__name}>Admin</span>
                   <svg
                     aria-hidden="true"
