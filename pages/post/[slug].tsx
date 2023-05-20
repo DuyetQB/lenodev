@@ -55,7 +55,6 @@ const BlogDetail =  ({ posts }: any) => {
       <div className="container">
         <div className={styles.blog_detail}>
           <div className={styles.blog_content}>
-            <h1 className={styles.title}>{posts?.data.title}</h1>
             <div className={styles.user}>
               <Image
                 src={ImageUser}
