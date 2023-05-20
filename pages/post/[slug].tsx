@@ -95,7 +95,7 @@ const BlogDetail =  ({ posts }: any) => {
               dangerouslySetInnerHTML={{ __html: posts?.data.body }}
             ></div>
 
-            <div className={styles.wrap_reaction}>
+            {/* <div className={styles.wrap_reaction}>
               <div
                 className={styles.reacttion__item}
                 title={reactTionLike.title}
@@ -159,7 +159,7 @@ const BlogDetail =  ({ posts }: any) => {
                 </svg>
                 <span>0</span>
               </div>
-            </div>
+            </div> */}
             {/* <div className={styles.tags}>
               {posts?.data.keyWords?.map((rc: any) => (
                 <Link href={`/post/${rc?.item}`} key={rc?.id}>{rc?.item}</Link>

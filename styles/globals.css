@@ -57,3 +57,7 @@ img {
 .fill-\[\#24221B\] {
   fill: #24221b;
 }
+ul {
+  list-style: unset !important;
+   padding-left: 45px !important ; 
+}

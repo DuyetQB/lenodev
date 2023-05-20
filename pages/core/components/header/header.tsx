@@ -17,6 +17,11 @@ const Header = () => {
         header {
           background: ${bgHeader ? "rgba(255, 255, 255, 0.8)":"transparent"};
         }
+        ul {
+          list-style:none !important;
+          padding:0  !important;
+          margin:0  !important;
+        }
       `}</style>
       <Link href="/" className="flex items-center">
         {/* Lenodev */}
