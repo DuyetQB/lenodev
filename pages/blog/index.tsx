@@ -21,13 +21,13 @@ const Blog = () => {
       <Meta
         title="Blog - page"
         description="Blog"
-        ogImage="https://www.google.com/url?sa=i&url=https%3A%2F%2Fdaihocdaivietsaigon.edu.vn%2Ftong-hop-50-anh-nen-dep-4k-danh-cho-may-tinh%2F&psig=AOvVaw1gyas5sErCtIqa1UuPqDww&ust=1683363262121000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCMiOpPzm3f4CFQAAAAAdAAAAABAE"
+        ogImage="https://daihocdaivietsaigon.edu.vn/wp-content/uploads/1679057148_365_Tong-hop-50-anh-nen-dep-4K-danh-cho-may.jpg"
         ogDescription="Lenodev - Blog"
         ogTitle="Blog - page"
         keywords="Những bài viết trên trang Lenodev"
         twitterTitle="Lenodev - Blog"
         twitterDescription="Blog "
-        twitterImage="https://www.google.com/url?sa=i&url=https%3A%2F%2Fdaihocdaivietsaigon.edu.vn%2Ftong-hop-50-anh-nen-dep-4k-danh-cho-may-tinh%2F&psig=AOvVaw1gyas5sErCtIqa1UuPqDww&ust=1683363262121000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCMiOpPzm3f4CFQAAAAAdAAAAABAE"
+        twitterImage="https://daihocdaivietsaigon.edu.vn/wp-content/uploads/1679057148_365_Tong-hop-50-anh-nen-dep-4K-danh-cho-may.jpg"
       />
       <div className="container">
         <section className={styles.new_post}>
