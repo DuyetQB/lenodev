@@ -35,7 +35,8 @@ const Meta = ({ ...props }: MetaProps) => {
       <meta http-equiv="expires" content="0" />
       {/* meta tag for everyone */}
       {/* <meta name="distribution" content="Global" />  */}
-
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1737962627563882"
+     crossOrigin="anonymous"></script>
     </Head>
   );
 };
