@@ -79,6 +79,6 @@ img {
 }
 
 ol {
-  list-style: auto;
-  padding: revert;
+  list-style: auto !important;
+  padding: revert !important;
 }
