@@ -77,3 +77,8 @@ img {
 .openBottom {
   transform: rotate(-45deg) translate(10px, 0);
 }
+
+ol {
+  list-style: auto;
+  padding: revert;
+}
