@@ -51,12 +51,15 @@
       pre {
         background: #eeeef0;
         color: #000;
-        display: flex;
+        display: inline-block;
         margin: 10px 0;
         padding: 10px;
         border-radius: 5px;
         position: relative;
         overflow-x: auto;
+        @media screen and (max-width: 779px) {
+          display: flex;
+        }
       }
     }
 
