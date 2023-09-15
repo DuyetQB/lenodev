@@ -18,13 +18,13 @@ const Home = (posts:any) => {
     <Layout>
       <Meta
         title="Lenodev"
-        description="Blog chia sẻ những kiến thức về lập trình"
+        description="A startup to build great apps and platforms to make life easier"
         ogImage={Thumbnail.src.toString()}
-        ogDescription="Lenodev - Blog chia sẻ những kiến thức về lập trình"
-        ogTitle="Lenodev - Trang chủ"
-        keywords="Tin tức, Lập trình, Tin tức Lenodev"
-        twitterTitle="Lenodev - Trang chủ"
-        twitterDescription="Lenodev - Blog chia sẻ những kiến thức về lập trình "
+        ogDescription="Lenodev - A startup to build great apps and platforms to make life easier"
+        ogTitle="Lenodev - Homepage"
+        keywords="News, Program, Lenodev's news"
+        twitterTitle="Lenodev - Home page"
+        twitterDescription="Lenodev - A startup to build great apps and platforms to make life easier"
         twitterImage={Thumbnail.src.toString()}
         linkCanoncal="https://lenodev.com"
         robotsFollow="index,follow"

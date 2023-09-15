@@ -43,6 +43,14 @@ const Navigation = ({ type }: InavigationType) => {
             </li>
             <li className="m-6">
               <Link
+                href="/products"
+                className="px-6 py-2.5 transition duration-300 ease-in-out text-base rounded-full flex items-center justify-center hover:text-primary hover:bg-gray-100"
+              >
+                Product
+              </Link>
+            </li>
+            <li className="m-6">
+              <Link
                 href="/blog"
                 className="px-6 py-2.5 transition duration-300 ease-in-out text-base rounded-full flex items-center justify-center hover:text-primary hover:bg-gray-100"
                 onClick={() => {
@@ -54,10 +62,10 @@ const Navigation = ({ type }: InavigationType) => {
             </li>
             <li className="m-6">
               <Link
-                href="/contact"
+                href="/about-us"
                 className="px-6 py-2.5 transition duration-300 ease-in-out text-base rounded-full flex items-center justify-center hover:text-primary hover:bg-gray-100"
               >
-                Contact
+                About Us
               </Link>
             </li>
             <li className="m-6">
@@ -133,6 +141,14 @@ const Navigation = ({ type }: InavigationType) => {
               Home
             </Link>
           </li>
+          <li className="m-6">
+              <Link
+                href="/products"
+                className="px-6 py-2.5 transition duration-300 ease-in-out text-base rounded-full flex items-center justify-center hover:text-primary hover:bg-gray-100"
+              >
+                Product
+              </Link>
+            </li>
           <li>
             <Link
               href="/blog"
@@ -144,20 +160,20 @@ const Navigation = ({ type }: InavigationType) => {
               Blog
             </Link>
           </li>
-          <li>
-            <Link
-              href="/contact"
-              className="px-3.5 py-2.5 transition duration-300 ease-in-out text-base rounded-full flex items-center justify-center hover:text-primary hover:bg-gray-100"
-            >
-              Contact
-            </Link>
-          </li>
+          <li className="m-6">
+              <Link
+                href="/about-us"
+                className="px-6 py-2.5 transition duration-300 ease-in-out text-base rounded-full flex items-center justify-center hover:text-primary hover:bg-gray-100"
+              >
+                About Us
+              </Link>
+            </li>
           <li >
             <Link
               href="/login"
               className="rounded-full bg-indigo-600  ml-4 mr-4 px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Login
+             Login
             </Link>
           </li>
           <button

@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { useState } from "react";
 import Validation from "../core/common/validation";
-import { LoginService } from "../../service/apiservice/user";
+import { useState } from "react";
+import { SignUpService } from "../../service/apiservice/user";
 
-const LogIn = () => {
+const SignUp = () => {
+  const [userName, setUserName] = useState("");
   const [dataEmail, setDataEmail] = useState({
     email: "",
     error: null,
@@ -13,7 +14,7 @@ const LogIn = () => {
     error: null,
   });
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     Validation({
       email: dataEmail.email,
       password: dataPassword.password,
@@ -50,22 +51,22 @@ const LogIn = () => {
         }
       });
     console.log("vvvv",dataEmail.email,dataPassword.password);
-
-   await LoginService({
+    SignUpService({
       email:dataEmail.email,
       password:dataPassword.password,
+      username:userName
     }).then((data:any) => {
-      if (data?.status == 200) {
-        console.log("data nưee:", data?.data);
-        localStorage.setItem("ACCESS_TOKEN", data?.data.accessToken);
-        localStorage.setItem("ACCESS_TOKEN_OLD", data?.data.accessToken);
-        localStorage.setItem("REFRESH_TOKEN", data?.data.refreshToken);
-        localStorage.setItem("CONFIG", JSON.stringify(data.data));
+      if (data?.status == 201) {
+        console.log("tạo user thanh cong e:", data?.data);
+        // localStorage.setItem("ACCESS_TOKEN", data?.data.accessToken);
+        // localStorage.setItem("ACCESS_TOKEN_OLD", data?.data.accessToken);
+        // localStorage.setItem("REFRESH_TOKEN", data?.data.refreshToken);
+        // localStorage.setItem("CONFIG", JSON.stringify(data.data));
       }
-      console.log("log");
-      setTimeout(() => {
-        window.open("/");
-      }, 2000);
+      // console.log("log");
+      // setTimeout(() => {
+      //   window.open("/");
+      // }, 2000);
     })
     .catch((err) => {
       if (err.status == "error password") {
@@ -80,45 +81,65 @@ const LogIn = () => {
         });
       }
     });
+
   };
   return (
     <>
-      <style jsx>{`
-        .custom_login_background {
-          background: url(https://firebasestorage.googleapis.com/v0/b/lenodevapi.appspot.com/o/imagescategorybanner.png?alt=media&token=4991de0c-9632-4bfe-86d7-50d3fbf7f25d);
-          background-size: cover;
-        }
+    <style jsx>{`
+     
+     .custom_login_background {
+       background:url( https://firebasestorage.googleapis.com/v0/b/lenodevapi.appspot.com/o/imagescategorybanner.png?alt=media&token=4991de0c-9632-4bfe-86d7-50d3fbf7f25d);
+       background-size:cover;
+      
+       }
+       
       `}</style>
       <div className="min-h-screen bg-gray-100 flex flex-col justify-center sm:py-12 custom_login_background">
         <div className="p-10 xs:p-0 mx-auto md:w-full md:max-w-lg">
-          <div className="flex py-10 items-center text-center text-2xl mb-5"></div>
+          <div className="flex py-10 items-center text-center text-2xl mb-5">
+          </div>
           <div className="bg-white shadow w-full rounded-lg divide-y divide-gray-200">
             <div className="px-5 py-7">
               <div className="mb-7">
-                <h3 className="font-semibold text-2xl text-gray-800">Login </h3>
+                <h3 className="font-semibold text-2xl text-gray-800">
+                  Sign Up{" "}
+                </h3>
                 <p className="text-gray-400">
-                  Do not have an account?{" "}
+                  Do already have an account?{" "}
                   <Link
-                    href="/signup"
+                    href="/login"
                     className="text-sm text-purple-700 hover:text-purple-700"
                   >
-                    Sign Up
+                    Login
                   </Link>
                 </p>
               </div>
+              <label className="font-semibold text-sm text-gray-600 pb-1 block">
+                Username
+              </label>
+              <input
+                type="text"
+                className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full"
+                value={userName}
+                onChange={(e) =>
+                  setUserName(e.target.value)
+                }
+              />
               <label className="font-semibold text-sm text-gray-600 pb-1 block">
                 E-mail
               </label>
               <input
                 type="email"
-                className="border rounded-lg px-3 py-2 mt-1 mb-1 text-sm w-full"
+                className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full"
                 value={dataEmail.email}
                 onChange={(e) =>
                   setDataEmail({ ...dataEmail, email: e.target.value })
                 }
+
+                required
               />
               {dataEmail.error ? (
-                <p style={{ color: "red" }} className="mb-2">{dataEmail.error}</p>
+                <p style={{ color: "red" }} className="py-2">{dataEmail.error}</p>
               ) : null}
               <label className="font-semibold text-sm text-gray-600 pb-1 block">
                 Password
@@ -130,17 +151,17 @@ const LogIn = () => {
                 onChange={(e) =>
                   setDataPassword({ ...dataPassword, password: e.target.value })
                 }
+                required
               />
               {dataPassword.error ? (
                 <p style={{ color: "red" }} className="py-2">{dataPassword.error}</p>
               ) : null}
-
               <button
-                onClick={handleSubmit}
+              onClick={handleSubmit}
                 type="button"
                 className="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block"
               >
-                <span className="inline-block mr-2">Login</span>
+                <span className="inline-block mr-2">Sign Up</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -197,7 +218,7 @@ const LogIn = () => {
                     />
                   </svg>
 
-                  <span className="ml-2">Login with Google</span>
+                  <span className="ml-2">Signup with Google</span>
                 </button>
                 <button
                   type="button"
@@ -222,7 +243,7 @@ const LogIn = () => {
                       fill="currentColor"
                     />
                   </svg>
-                  <span className="ml-2">Login with Github</span>
+                  <span className="ml-2">Signup with Github</span>
                 </button>
               </div>
             </div>
@@ -244,9 +265,11 @@ const LogIn = () => {
                         d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"
                       />
                     </svg>
-                    <Link href="/forgot-password">
-                      <span className="inline-block ml-1">Forgot Password</span>
-                    </Link>
+                      <Link href="/forgot-password">
+                    <span className="inline-block ml-1">
+                        Forgot Password
+                    </span>
+                        </Link>
                   </button>
                 </div>
                 <div className="text-center sm:text-right whitespace-nowrap">
@@ -265,9 +288,11 @@ const LogIn = () => {
                         d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
                       />
                     </svg>
-                    <Link href="/help">
-                      <span className="inline-block ml-1">Help</span>
-                    </Link>
+                      <Link href="/help">
+                    <span className="inline-block ml-1">
+                        Help
+                    </span>
+                        </Link>
                   </button>
                 </div>
               </div>
@@ -276,7 +301,7 @@ const LogIn = () => {
           <div className="py-5">
             <div className="grid grid-cols-2 gap-1">
               <div className="text-center sm:text-left whitespace-nowrap">
-                <button className="transition duration-200 text-white mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-gray-500  focus:outline-none focus:bg-gray-300 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset">
+                <button className="text-white transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-gray-500  focus:outline-none focus:bg-gray-300 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -291,11 +316,11 @@ const LogIn = () => {
                       d="M10 19l-7-7m0 0l7-7m-7 7h18"
                     />
                   </svg>
-                  <Link href="/">
-                    <span className="inline-block ml-1 hover:underline">
+                    <Link href="/">
+                  <span className="inline-block ml-1 hover:underline">
                       Back to lenodev.com
-                    </span>
-                  </Link>
+                  </span>
+                    </Link>
                 </button>
               </div>
             </div>
@@ -306,4 +331,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default SignUp;

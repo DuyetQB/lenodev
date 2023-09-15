@@ -15,6 +15,12 @@ export interface MetaProps {
 
 }
 
+export interface IValidation {
+    email:string,
+    password:string
+}
+
+
 const Type = () =>{
   
 }

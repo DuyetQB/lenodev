@@ -19,7 +19,7 @@ const Meta = ({ ...props }: MetaProps) => {
       <link rel="canonical" href={props.linkCanoncal} />
       <meta
         property="og:site_name"
-        content="Lenodev - Cung cấp các bài viết liên quan tới lập trình từ Frontend cho tới Backend"
+        content="Lenodev - A startup to build great apps and platforms to make life easier"
       />
       <meta property="og:url" content={props.linkCanoncal} />
       <meta name="twitter:title" content={props.twitterTitle} />

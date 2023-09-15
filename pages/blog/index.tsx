@@ -7,7 +7,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import Layout from "../core/layout/layout";
 import Meta from "../core/components/meta/meta";
-import GetAllPost from "../../service/apiservice/api";
+import { GetAllPost } from "../../service/apiservice/post";
 import  useFetch from "../../service/hooks/useFetch";
 
 const Blog = () => {

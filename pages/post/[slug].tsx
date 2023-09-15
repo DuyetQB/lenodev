@@ -63,7 +63,6 @@ const BlogDetail =  ({ posts }: any) => {
                 alt="avatar"
                 className={styles.user__avatar}
               />
-
               <div>
                 <Link href="/" className="flex">
                   <span className={styles.user__name}>Admin</span>
