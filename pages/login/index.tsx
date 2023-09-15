@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
-import Validation from "../core/common/validation";
+import { validation } from "../../common/validation";
 import { LoginService } from "../../service/apiservice/user";
 
 const LogIn = () => {
@@ -14,7 +14,7 @@ const LogIn = () => {
   });
 
   const handleSubmit = async () => {
-    Validation({
+    validation({
       email: dataEmail.email,
       password: dataPassword.password,
     })

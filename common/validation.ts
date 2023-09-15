@@ -1,6 +1,6 @@
-import  { IValidation } from "../types/types";
+import  { IValidation } from "../pages/core/types/types";
 
- const Validation = (payload:IValidation )=> {
+export const validation = (payload:IValidation )=> {
     return new Promise((resolve, reject) => {
       if (payload.email === "") {
         let dataTextEmpty = {
@@ -22,4 +22,3 @@ import  { IValidation } from "../types/types";
       resolve({error:null});
     });
   };
-export default Validation;
