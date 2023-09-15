@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
-import { Validation } from "../core/common/validation";
+import Validation from "../core/common/validation";
 import { LoginService } from "../../service/apiservice/user";
 
 const LogIn = () => {

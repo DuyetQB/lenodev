@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Validation } from "../core/common/validation";
+import  Validation from "../core/common/validation";
 import { useState } from "react";
 import { SignUpService } from "../../service/apiservice/user";
 
