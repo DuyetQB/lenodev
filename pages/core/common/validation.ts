@@ -1,6 +1,6 @@
 import  { IValidation } from "../types/types";
 
-const Validation = (payload:IValidation )=> {
+export const Validation = (payload:IValidation )=> {
     return new Promise((resolve, reject) => {
       if (payload.email === "") {
         let dataTextEmpty = {
@@ -22,5 +22,3 @@ const Validation = (payload:IValidation )=> {
       resolve({error:null});
     });
   };
-
-  export default Validation;

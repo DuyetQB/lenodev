@@ -145,10 +145,10 @@ const AboutUs = () => {
                     />
                   </div>
                   <h3 className="text-lg font-semibold text-neutral-900 mt-4 md:text-xl dark:text-neutral-200">
-                    Mr. Duyet Dinh
+                    Mr. Thai Quang
                   </h3>
                   <span className="block text-sm text-neutral-600 sm:text-base dark:text-neutral-400">
-                    Founder
+                    Co-Founder
                   </span>
                 </div>
                 <div className="max-w ">
@@ -163,7 +163,7 @@ const AboutUs = () => {
                       src={ThaiImage}
                       style={{
                         position: "absolute",
-                        height: "100%",
+                        height: "464px",
                         width: "100%",
                         inset: 0,
                         color: "transparent",
@@ -171,10 +171,10 @@ const AboutUs = () => {
                     />
                   </div>
                   <h3 className="text-lg font-semibold text-neutral-900 mt-4 md:text-xl dark:text-neutral-200">
-                    Mr. Thai Quang
+                    Mr. Duyet Dinh
                   </h3>
                   <span className="block text-sm text-neutral-600 sm:text-base dark:text-neutral-400">
-                    Co-Founder
+                    Founder
                   </span>
                 </div>
 
