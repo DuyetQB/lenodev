@@ -21,7 +21,7 @@ const AboutUs = () => {
         <div className="isolate bg-white px-6 py-2 sm:py-3 lg:px-8">
           {/*  */}
           <div className="container py-1 lg:py-2 space-y-1 lg:space-y-2">
-            <div className="nc-SectionHero relative ">
+            <div className="nc-SectionHero relative pb-4">
               <div className="flex flex-col lg:flex-row space-y-14 lg:space-y-0 lg:space-x-10 items-center relative text-center lg:text-left ">
                 <div className="w-screen max-w-full xl:max-w-lg space-y-5 lg:space-y-7">
                   <h2 className="text-3xl !leading-tight font-semibold text-neutral-900 md:text-4xl xl:text-5xl dark:text-neutral-100">
@@ -111,7 +111,7 @@ const AboutUs = () => {
                 </div>
               </div>
             </div>
-            <div className="nc-SectionFounder relative" id="team">
+            <div className="nc-SectionFounder relative py-6" id="team">
               <div className="nc-Section-Heading relative flex flex-col sm:flex-row sm:items-end justify-between mb-10 md:mb-12 text-neutral-900 dark:text-neutral-50">
                 <div className="max-w-2xl">
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold">
@@ -269,7 +269,7 @@ const AboutUs = () => {
                 </div>
               </div>
             </div>
-            <div id="partner" className="nc-SectionSliderNewCategories ">
+            <div id="partner" className="nc-SectionSliderNewCategories py-4">
               <div className="nc-Section-Heading relative flex flex-col sm:flex-row sm:items-end justify-between mb-10 md:mb-12 text-neutral-900 dark:text-neutral-50">
                 <div className="max-w-2xl">
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold">
