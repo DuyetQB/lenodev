@@ -2,6 +2,7 @@ const EXTERNAL_DATA_URL = 'https://traiga-api.vercel.app/api/public-getAllProduc
 const EXTERNAL_BASE_URL = 'https://lenodev.com/blog';
 
 function generateSiteMap(posts:any) {
+
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <!--We manually set the two URLs we know already-->
@@ -17,11 +18,10 @@ function generateSiteMap(posts:any) {
      <url>
        <loc>https://lenodev.com/blog</loc>
      </url>
-     ${posts
-       .map(({ slug }:any) => {
+     ${posts?.data?.map((item:any) => {
          return `
        <url>
-           <loc>${`${EXTERNAL_BASE_URL}/${slug}`}</loc>
+           <loc>${`${EXTERNAL_BASE_URL}/${item?.slug}`}</loc>
        </url>
      `;
        })
@@ -35,18 +35,27 @@ function SiteMap() {
 }
 
 export async function getServerSideProps({ res }:any) {
-  // We make an API call to gather the URLs for our site
-  const request = await fetch(EXTERNAL_DATA_URL);
-  const posts = await request.json();
-
-  // We generate the XML sitemap with the posts data
-  const sitemap = generateSiteMap(posts);
-
-  res.setHeader('Content-Type', 'text/xml');
-  // we send the XML to the browser
-  res.write(sitemap);
-  res.end();
-
+  try {
+    const request = await fetch(EXTERNAL_DATA_URL);
+    
+    if (request.ok) {
+      const posts = await request.json();
+      // Generate the sitemap using the posts data
+      const sitemap = generateSiteMap(posts);
+      // Set headers and send the sitemap
+      res.setHeader('Content-Type', 'text/xml');
+      res.write(sitemap);
+      res.end();
+    } else {
+      // Handle API response error here
+      console.error('Error fetching data from the API');
+      // Return an error response if needed
+    }
+  } catch (error) {
+    console.error('An error occurred while fetching data:', error);
+    // Handle the error and return an error response if needed
+  }
+  
   return {
     props: {},
   };
